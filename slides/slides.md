@@ -1,7 +1,8 @@
 
 # TODO
-* 80 30
-* scale up  a bit right column in slide 5
+* scale up a bit codes and images
+* watter
+* powers supply
 
 ---
 
@@ -197,7 +198,9 @@ Next problem wee wanna show, solving redundancy issue
 
 Jakob talked about using Kubernetes, we run number of instances of each service
 
-What do you think to happen when a number of service instances listen to same salesforce events
+What do you think to happen ...
+
+if a number of service instances listen to same salesforce event ...
 
 Go to next slide, wait for answer from the audience ...
 
@@ -236,7 +239,9 @@ I'll shortly talk about a bit later
 
 Focus on the flow from Salesforce
 
-Next: Tims shows the issue AND the solution in code
+Tims is going to
+* demonstrate the issue
+* AND hopefully a solution in code
 
 -->
 
@@ -289,13 +294,18 @@ ddebounce library
 
 not going into details
 
-it's not mutext implementation, is rather naive,
+it's not a real mutex implementation, is rather naive
 
 but good enough for most of our cases
 
-operations in syncing, most of the time are idempotent
+you don;t get duplicates
 
-it's easier if you implement your sync idempotent
+and if you do, it's not a disaster
+
+(
+most of the calls we have are idempotent
+including creates
+)
 
 -->
 
@@ -325,9 +335,10 @@ A related problem ... read it out
 
 Where one would debounce, Tim?
 
-TIM says examples
-
-TIM shows the solution / debounce the debounce applied on the entrypoints
+TIM
+* says examples
+* demonstrates the issue
+* shows the solution / debounce the debounce applied on the entrypoints
 
 ((
 
@@ -444,7 +455,13 @@ Next: Tim shows a little demo about
 
 back to me - reading out the slide
 
-ELK (Jakob's screenshot)
+ELK (Jakob's presented screenshot)
+
+Fielbeat, Lohstash, Elasticsearch, Kibana
+
+together with normal logging entries
+
+centralised logging
 
 Tracer is the second thing to take from this talk!!! it's very powerful
 
@@ -480,6 +497,9 @@ https://github.com/timbu/nameko-demo{.small}
 
 # Appendix
 
+```{style="font-size:12;"}
+https://github.com/timbu/nameko-demo
+```
 List of tools used:
 ```{style="font-size:12;"}
 https://github.com/onefinestay/nameko-sqlalchemy
